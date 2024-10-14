@@ -37,6 +37,12 @@ public class CartPage extends BaseObject{
 	
 	@FindBy(id="product-2")
 	List<WebElement> secondProductsDetails;
+	
+	//fourth product view at cart with quantity 4
+	
+	@FindBy(xpath="//td [@class='cart_quantity']//button")
+	WebElement productfourthquantity;
+	
 	//===============================================
 	
 	public boolean subscription_msg()
@@ -87,5 +93,11 @@ public class CartPage extends BaseObject{
 		
 	}
 
+	//verify fourth product quntity in cart
+	
+	public String getfouthProductQuantity()
+	{
+		return productfourthquantity.getText();
+	}
 	
 }

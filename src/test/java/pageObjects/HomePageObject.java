@@ -47,6 +47,9 @@ public class HomePageObject extends BaseObject {
 	@FindBy(xpath="//ul//li//a[@href='/view_cart']")
 	WebElement cart_btn;
 	
+	@FindBy(xpath="//a[@href='/product_details/4']")
+	WebElement fourthProductView_btn;
+	
 	//action 
 	
 	//Automation Exercise-- title 
@@ -112,6 +115,11 @@ public class HomePageObject extends BaseObject {
 	public void click_Cart_btn()
 	{
 		cart_btn.click();
+	}
+	
+	public void click_fourth_view_product_btn()
+	{
+		fourthProductView_btn.click();
 	}
 	
 	

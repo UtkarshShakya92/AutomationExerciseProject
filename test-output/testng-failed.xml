@@ -6,7 +6,7 @@
       <class name="testCases.TC_006_CartTest">
         <methods>
           <include name="setUp"/>
-          <include name="addToCartProducts"/>
+          <include name="Verify_fourth_Product_Quantity"/>
         </methods>
       </class> <!-- testCases.TC_006_CartTest -->
     </classes>

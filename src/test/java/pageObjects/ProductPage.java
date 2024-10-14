@@ -86,6 +86,22 @@ public class ProductPage extends BaseObject{
 	@FindBy(xpath="//div[@class='modal-body']//p//a[@href='/view_cart']")
 	WebElement viewCartbtn;
 	
+	//4th product perticular page 
+	
+	@FindBy(xpath="//div[@class='product-information']//h2")
+	WebElement fourthProductPage; 
+	
+	
+	//input or increase quantity to 4
+	
+	@FindBy(id="quantity")
+	WebElement fourthproductquantity; 
+	
+	@FindBy(css =".cart")
+	WebElement forthproductPage_AddCart_btn;
+	
+	
+	
 	//==============================================
 	
 	Actions act =new Actions(driver);
@@ -226,4 +242,28 @@ public class ProductPage extends BaseObject{
 	{
 		viewCartbtn.click();
 	}
+	
+	// to verify fourth page is visible or not
+	
+	public String productfourthPage()
+	{
+		mywait.until(ExpectedConditions.visibilityOf(fourthProductPage));
+		return fourthProductPage.getText();
+	}
+	
+	//to increase quatity to 4
+	
+	public void increase_product_quantity(String quantity)
+	{
+		fourthproductquantity.clear();
+		fourthproductquantity.sendKeys(quantity);
+	}
+	
+	//fouth page add cart btn
+	
+	public void fourth_page_add_Cart_btn()
+	{
+		forthproductPage_AddCart_btn.click();
+	}
+	
 }
