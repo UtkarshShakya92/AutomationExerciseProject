@@ -18,6 +18,12 @@ public class CartPage extends BaseObject{
 	//JavascriptExecutor js = (JavascriptExecutor) driver;
 	
 	
+	@FindBy(xpath="//div[@class='breadcrumbs']//ol//li//following-sibling::li")
+	WebElement shoppingCartTxt;
+	
+	@FindBy(xpath="//a[text()='Proceed To Checkout']")
+	WebElement checkOutbtn;
+	
 	@FindBy(xpath="//div//h2[text()='Subscription']")
 	WebElement subscription_txt;
 
@@ -42,6 +48,11 @@ public class CartPage extends BaseObject{
 	
 	@FindBy(xpath="//td [@class='cart_quantity']//button")
 	WebElement productfourthquantity;
+	
+	//Checkoutpage Register loginbtn
+	
+	@FindBy(xpath="//a/u[text()='Register / Login']")
+	WebElement registerLoginbtn;
 	
 	//===============================================
 	
@@ -100,4 +111,21 @@ public class CartPage extends BaseObject{
 		return productfourthquantity.getText();
 	}
 	
+	
+	//verify that you are in Cart Page
+	
+	public String  verify_Cart_Page()
+	{
+		return shoppingCartTxt.getText();
+	}
+	
+	public void click_CheckOut_btn()
+	{
+		checkOutbtn.click();
+	}
+	
+	public void click_RegisterLogin_btn()
+	{
+		registerLoginbtn.click();
+	}
 }

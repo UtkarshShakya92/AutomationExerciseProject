@@ -243,7 +243,7 @@ public class ProductPage extends BaseObject{
 		viewCartbtn.click();
 	}
 	
-	// to verify fourth page is visible or not
+	// to verify fourth Product page is visible or not
 	
 	public String productfourthPage()
 	{
@@ -259,7 +259,7 @@ public class ProductPage extends BaseObject{
 		fourthproductquantity.sendKeys(quantity);
 	}
 	
-	//fouth page add cart btn
+	//fourth page add cart btn
 	
 	public void fourth_page_add_Cart_btn()
 	{
