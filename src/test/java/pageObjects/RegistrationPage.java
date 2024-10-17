@@ -64,6 +64,9 @@ public class RegistrationPage extends BaseObject{
 	@FindBy(id="address1")
 	WebElement address1;
 	
+	@FindBy(id="address2")
+	WebElement address2;
+	
 	@FindBy(id="country")
 	WebElement country;
 	
@@ -187,6 +190,12 @@ public class RegistrationPage extends BaseObject{
 	public void enter_address1(String address)
 	{
 		address1.sendKeys(address);
+	}
+	
+	
+	public void enter_address2(String secaddress)
+	{
+		address2.sendKeys(secaddress);
 	}
 	
 	public void country_drp_down(String countryName)

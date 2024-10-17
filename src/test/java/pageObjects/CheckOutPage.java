@@ -1,6 +1,9 @@
 package pageObjects;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,10 +16,10 @@ public class CheckOutPage extends BaseObject{
 		super(driver);
 	}
 	
-	@FindBy(xpath="//ul[@id='address_delivery']//li")
+	@FindBy(xpath="//ul[@id='address_delivery']//li/following-sibling::li")
 	List<WebElement> delivery_address;
 	
-	@FindBy(id="address_invoice")
+	@FindBy(xpath="//ul[@id='address_invoice']//li/following-sibling::li")
 	List<WebElement> billing_address;
 	
 	@FindBy(xpath="(//p[@class='cart_total_price'])[3]")
@@ -31,15 +34,38 @@ public class CheckOutPage extends BaseObject{
 	
 	//==========================================================
 	
-	public String[] getAddressDelivery()
+	public void sizeofaddress()
 	{
-		String addressDelivery = "";
+		System.out.println(delivery_address.size());
+	}
+	
+	
+	public List<String> getAddressDelivery()
+	{
+		List<String> addressDelivery = new ArrayList<String>(); 
 		
 		for(int i=0;i<delivery_address.size();i++)
 		{
-			addressDelivery = delivery_address.get(i).getText();
+			 addressDelivery.add(delivery_address.get(i).getText());
+			
 		}
 		
 		return addressDelivery; 
 	}
+	
+	public List<String> getAddressBilling()
+	{
+		
+		List<String> addressBilling = new ArrayList<String>();
+		
+		for(int i=0;i<billing_address.size();i++)
+		{
+		     addressBilling.add(billing_address.get(i).getText());
+		}
+		
+		return addressBilling;
+	}
+	
+	
+	
 }

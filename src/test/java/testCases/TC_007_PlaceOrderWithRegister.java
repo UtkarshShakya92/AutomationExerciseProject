@@ -3,14 +3,20 @@ package testCases;
 import static org.testng.Assert.assertTrue;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pageObjects.CartPage;
+import pageObjects.CheckOutPage;
 import pageObjects.HomePageObject;
 import pageObjects.RegistrationPage;
 import testBase.TestBase;
@@ -87,9 +93,11 @@ public class TC_007_PlaceOrderWithRegister extends TestBase{
 		
 		rp.enter_last_name("testing");
 		
-		rp.enter_company_name("Test");
+		rp.enter_company_name("TestComp");
 		
 		rp.enter_address1("test103");
+		
+		rp.enter_address2("test203");
 		
 		rp.country_drp_down("Australia");
 		
@@ -120,5 +128,62 @@ public class TC_007_PlaceOrderWithRegister extends TestBase{
 		hp.click_Cart_btn();
 		
 		cp.click_CheckOut_btn();
+		
+		//verify the billing address in CheckOutPage
+		
+		CheckOutPage cop = new CheckOutPage(driver);
+		
+		//System.out.println(cop.getAddressDelivery());
+		cop.sizeofaddress();
+		
+		//System.out.println(cop.getAddressDelivery().get(0));
+		
+		
+		List<String> billingAddress = new ArrayList<String>();
+		billingAddress.add("Mr. Test33 testing");
+		billingAddress.add("TestComp");
+		billingAddress.add("test103");
+		billingAddress.add("test203");
+		billingAddress.add("Canbera Whales 345678");
+		billingAddress.add("Australia");
+		billingAddress.add("9999999999");
+		
+		//Verifying the Delivery Address  
+		for(int i=0;i<billingAddress.size();i++)
+		{
+			Assert.assertTrue(cop.getAddressDelivery().get(i).contains(billingAddress.get(i)));
+		}
+		
+		System.out.println("billing address  is verified");
+		
+		/*Assert.assertTrue(cop.getAddressDelivery().get(0).contains(billingAddress.get(0)));
+		Assert.assertTrue(cop.getAddressDelivery().get(1).contains(billingAddress.get(1)));
+		Assert.assertTrue(cop.getAddressDelivery().get(2).contains(billingAddress.get(2)));
+		Assert.assertTrue(cop.getAddressDelivery().get(3).contains(billingAddress.get(3)));
+		Assert.assertTrue(cop.getAddressDelivery().get(4).contains(billingAddress.get(4)));
+		Assert.assertTrue(cop.getAddressDelivery().get(5).contains(billingAddress.get(5)));
+		Assert.assertTrue(cop.getAddressDelivery().get(6).contains(billingAddress.get(6)));
+		
+		System.out.println("billing address  is verified");  */
+		
+		//Verifying the Delivery Address 
+		
+		List<String> invoiceAddress = new ArrayList<String>();
+		invoiceAddress.add("Mr. Test33 testing");
+		invoiceAddress.add("TestComp");
+		invoiceAddress.add("test103");
+		invoiceAddress.add("test203");
+		invoiceAddress.add("Canbera Whales 345678");
+		invoiceAddress.add("Australia");
+		invoiceAddress.add("9999999999");
+		
+		System.out.println(invoiceAddress.get(0));
+		
+		for(int i=0;i<invoiceAddress.size();i++)
+		{
+		Assert.assertTrue(cop.getAddressBilling().get(i).contains(invoiceAddress.get(i)));
+		}
+		System.out.println("Invoice address  is verified");
+		
 	}
 }

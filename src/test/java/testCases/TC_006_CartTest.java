@@ -50,7 +50,7 @@ public class TC_006_CartTest extends TestBase{
 		
 	}
 	
-	//@Test
+	@Test
 	public void addToCartProducts()
 	{
        HomePageObject hp = new HomePageObject(driver);
@@ -90,6 +90,9 @@ public class TC_006_CartTest extends TestBase{
 		
 		CartPage cp = new CartPage(driver);
 		
+		String p = cp.firstProduct();
+		System.out.println(p);
+		
 		HashMap<Integer,String> map = new HashMap<Integer,String>();
 		map.put(1, "Blue Top");
 		map.put(1, "Women > Tops");
@@ -102,6 +105,7 @@ public class TC_006_CartTest extends TestBase{
 		map.put(2, "1");
 		map.put(2, "Rs. 400");
 		
+		
 		Assert.assertTrue(cp.firstProduct().contains(map.get(1)));
 		
 		Assert.assertTrue(cp.secondProduct().contains(map.get(2)));
@@ -111,7 +115,7 @@ public class TC_006_CartTest extends TestBase{
 	}
 	
 	
-	@Test
+	//@Test
 	public void Verify_fourth_Product_Quantity()
 	{
         HomePageObject hp = new HomePageObject(driver);

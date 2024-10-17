@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-16T17:17:37 IST" name="Default suite" finished-at="2024-10-16T17:18:09 IST" duration-ms="32400">
+  <suite started-at="2024-10-17T18:59:37 IST" name="Default suite" finished-at="2024-10-17T19:00:29 IST" duration-ms="52097">
     <groups>
     </groups>
-    <test started-at="2024-10-16T17:17:37 IST" name="Default test" finished-at="2024-10-16T17:18:09 IST" duration-ms="32400">
+    <test started-at="2024-10-17T18:59:37 IST" name="Default test" finished-at="2024-10-17T19:00:29 IST" duration-ms="52097">
       <class name="testCases.TC_007_PlaceOrderWithRegister">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.TC_007_PlaceOrderWithRegister@293bb8a5]" started-at="2024-10-16T17:17:37 IST" name="setUp" finished-at="2024-10-16T17:17:49 IST" duration-ms="11723" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.TC_007_PlaceOrderWithRegister@293bb8a5]" started-at="2024-10-17T18:59:37 IST" name="setUp" finished-at="2024-10-17T18:59:56 IST" duration-ms="18154" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="PlaceOrderWithRegister()[pri:0, instance:testCases.TC_007_PlaceOrderWithRegister@293bb8a5]" started-at="2024-10-16T17:17:49 IST" name="PlaceOrderWithRegister" finished-at="2024-10-16T17:18:09 IST" duration-ms="20587" status="PASS">
+        <test-method signature="PlaceOrderWithRegister()[pri:0, instance:testCases.TC_007_PlaceOrderWithRegister@293bb8a5]" started-at="2024-10-17T18:59:56 IST" name="PlaceOrderWithRegister" finished-at="2024-10-17T19:00:29 IST" duration-ms="33869" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- PlaceOrderWithRegister -->
