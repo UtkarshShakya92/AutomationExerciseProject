@@ -22,6 +22,9 @@ public class CheckOutPage extends BaseObject{
 	@FindBy(xpath="//ul[@id='address_invoice']//li/following-sibling::li")
 	List<WebElement> billing_address;
 	
+	@FindBy(xpath="//div[@id='cart_info']//tbody//tr//h4//a")
+	List<WebElement> checkoutPageProducts;
+	
 	@FindBy(xpath="(//p[@class='cart_total_price'])[3]")
 	WebElement cart_Total_Amount;
 	
@@ -66,6 +69,31 @@ public class CheckOutPage extends BaseObject{
 		return addressBilling;
 	}
 	
+	public List<String> getCheckoutProducts()
+	{
+		List<String> checkoutProducts = new ArrayList<String>();
+		
+		for(int i=0;i<checkoutPageProducts.size();i++)
+		{
+			checkoutProducts.add(checkoutPageProducts.get(i).getText());
+		}
+		
+		return checkoutProducts;
+	}
 	
+	public String productsTotalAmount()
+	{
+		return cart_Total_Amount.getText();
+	}
+	
+	public void message_text_area(String msgtext)
+	{
+		msg_area.sendKeys(msgtext);
+	}
+	
+	public void clickPlaceOrderBtn()
+	{
+		payment_btn.click();
+	}
 	
 }
