@@ -1,11 +1,14 @@
 package pageObjects;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class CartPage extends BaseObject{
@@ -54,7 +57,24 @@ public class CartPage extends BaseObject{
 	@FindBy(xpath="//a/u[text()='Register / Login']")
 	WebElement registerLoginbtn;
 	
+	//firstproductremove
+	
+	@FindBy(xpath="//a[@data-product-id='1']")
+	WebElement firstproductremove;
+	
+	//second Product Remove
+	
+	@FindBy(xpath="//a[@data-product-id='2']")
+	WebElement secondProductremove;
+	
+	//empty Cart 
+	
+	@FindBy(xpath="//span//p/b[text()='Cart is empty!']")
+	WebElement emptyCart;
+	
 	//===============================================
+	
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 	
 	public boolean subscription_msg()
 	{
@@ -127,5 +147,21 @@ public class CartPage extends BaseObject{
 	public void click_RegisterLogin_btn()
 	{
 		registerLoginbtn.click();
+	}
+	
+	public void remove_first_Product()
+	{
+		firstproductremove.click();
+	}
+	
+	public void remove_second_Product()
+	{
+		secondProductremove.click();
+	}
+	
+	public boolean emptyCartmsg()
+	{
+		wait.until(ExpectedConditions.visibilityOf(emptyCart));
+		return emptyCart.isDisplayed();
 	}
 }
