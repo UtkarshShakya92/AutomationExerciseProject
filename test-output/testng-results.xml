@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-18T11:52:36 IST" name="Default suite" finished-at="2024-10-18T11:54:21 IST" duration-ms="104220">
+  <suite started-at="2024-10-18T15:54:26 IST" name="Default suite" finished-at="2024-10-18T15:55:25 IST" duration-ms="59045">
     <groups>
     </groups>
-    <test started-at="2024-10-18T11:52:36 IST" name="Default test" finished-at="2024-10-18T11:54:21 IST" duration-ms="104220">
-      <class name="testCases.TC_008_PlaceOrder_RegisterBeforeCheckout">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.TC_008_PlaceOrder_RegisterBeforeCheckout@293bb8a5]" started-at="2024-10-18T11:52:36 IST" name="setUp" finished-at="2024-10-18T11:53:02 IST" duration-ms="25196" status="PASS">
+    <test started-at="2024-10-18T15:54:26 IST" name="Default test" finished-at="2024-10-18T15:55:25 IST" duration-ms="59045">
+      <class name="testCases.TC_009_PlaceOrderLoginBeforeCheckOut">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.TC_009_PlaceOrderLoginBeforeCheckOut@293bb8a5]" started-at="2024-10-18T15:54:26 IST" name="setUp" finished-at="2024-10-18T15:54:35 IST" duration-ms="9092" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="placeOrderAfterRegistraition()[pri:0, instance:testCases.TC_008_PlaceOrder_RegisterBeforeCheckout@293bb8a5]" started-at="2024-10-18T11:53:02 IST" name="placeOrderAfterRegistraition" finished-at="2024-10-18T11:54:21 IST" duration-ms="78941" status="PASS">
+        <test-method signature="PlaceOrderAfterLogin()[pri:0, instance:testCases.TC_009_PlaceOrderLoginBeforeCheckOut@293bb8a5]" started-at="2024-10-18T15:54:35 IST" name="PlaceOrderAfterLogin" finished-at="2024-10-18T15:55:25 IST" duration-ms="49866" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- placeOrderAfterRegistraition -->
-      </class> <!-- testCases.TC_008_PlaceOrder_RegisterBeforeCheckout -->
+        </test-method> <!-- PlaceOrderAfterLogin -->
+      </class> <!-- testCases.TC_009_PlaceOrderLoginBeforeCheckOut -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

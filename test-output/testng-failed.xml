@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.TC_008_PlaceOrder_RegisterBeforeCheckout">
+      <class name="testCases.TC_009_PlaceOrderLoginBeforeCheckOut">
         <methods>
           <include name="setUp"/>
-          <include name="placeOrderAfterRegistraition"/>
+          <include name="PlaceOrderAfterLogin"/>
         </methods>
-      </class> <!-- testCases.TC_008_PlaceOrder_RegisterBeforeCheckout -->
+      </class> <!-- testCases.TC_009_PlaceOrderLoginBeforeCheckOut -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
