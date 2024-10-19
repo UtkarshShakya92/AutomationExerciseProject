@@ -82,7 +82,7 @@ public class HomePageObject extends BaseObject {
 	
 	//verify for women -dress category
 	
-	@FindBy(xpath="//h2[text()='Women - Dress Products']")
+	@FindBy(xpath="(//div[@class='features_items']//h2)[1]")
 	WebElement womendressproduct;
 	
 	//product category page men +sign
@@ -96,7 +96,7 @@ public class HomePageObject extends BaseObject {
 	WebElement clickJeans;
 	
 	//verifying  the men category 
-	@FindBy(xpath="//div[@class='features_items']//h2[text()='Men - Jeans Products']")
+	@FindBy(xpath="(//div[@class='features_items']//h2)[1]")
 	WebElement jeans_display;
 	
 	//action 
@@ -224,11 +224,11 @@ public class HomePageObject extends BaseObject {
 	}
 	
 	//verify for "Women Dress -Products"
-	public boolean verifyWomenDressProduct()
+	public String verifyWomenDressProduct()
 	{
 		wait.until(ExpectedConditions.visibilityOf(womendressproduct));
 		
-		return womendressproduct.isDisplayed();
+		return womendressproduct.getText();
 	}
 	
 	//products category page men link
@@ -242,9 +242,9 @@ public class HomePageObject extends BaseObject {
 		clickJeans.click();
 	}
 	
-	public boolean displayMenReqProd()
+	public String displayMenReqProd()
 	{
 		wait.until(ExpectedConditions.visibilityOf(jeans_display));
-		return jeans_display.isDisplayed();
+		return jeans_display.getText();
 	}
 }

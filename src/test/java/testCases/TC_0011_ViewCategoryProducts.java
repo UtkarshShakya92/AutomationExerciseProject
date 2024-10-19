@@ -28,7 +28,7 @@ public class TC_0011_ViewCategoryProducts extends TestBase{
 		
 		hp.clickDress();
 		
-		Assert.assertTrue(hp.verifyWomenDressProduct());
+		Assert.assertTrue(hp.verifyWomenDressProduct().contains("WOMEN"));
 		
 		System.out.println("Women Dress Products displayed");
 		
@@ -36,7 +36,7 @@ public class TC_0011_ViewCategoryProducts extends TestBase{
 		
 		hp.clickJeansProducts();
 		
-		Assert.assertTrue(hp.categoryDisplay());
+		Assert.assertTrue(hp.displayMenReqProd().contains("MEN"));
 		
 		System.out.println("Mens Jeans Products are dispayed");
 	}
