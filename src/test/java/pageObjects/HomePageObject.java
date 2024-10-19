@@ -67,9 +67,44 @@ public class HomePageObject extends BaseObject {
 	
 	@FindBy(xpath="//a[@href='/view_cart']//u")
 	WebElement homepageViewCartbtn;
+	
+	//home page left side category visible
+	@FindBy(id="accordian")
+	WebElement categories;
+	
+	//home women category + click
+	@FindBy(xpath="//a[@href='#Women']//i")
+	WebElement clickWomencategory;
+	
+	//Women category ---Dress
+	@FindBy(xpath ="//a[@href='/category_products/1']")
+	WebElement dresscategory;
+	
+	//verify for women -dress category
+	
+	@FindBy(xpath="//h2[text()='Women - Dress Products']")
+	WebElement womendressproduct;
+	
+	//product category page men +sign
+	
+	@FindBy(xpath="//a[@href='#Men']//span//i")
+	WebElement clickMenCategory;
+	
+	//clciking jeans 
+	
+	@FindBy(xpath="//a[@href='/category_products/6']")
+	WebElement clickJeans;
+	
+	//verifying  the men category 
+	@FindBy(xpath="//div[@class='features_items']//h2[text()='Men - Jeans Products']")
+	WebElement jeans_display;
+	
 	//action 
 	
 	//Automation Exercise-- title 
+	
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+	
 	
 		public String getHomePageTitle()
 		{
@@ -152,7 +187,7 @@ public class HomePageObject extends BaseObject {
 	
 	public void home_page_menTshirt_Product()
 	{
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+		
 		wait.until(ExpectedConditions.visibilityOf(homepage_menTshirt));
 		homepage_menTshirt.click();
 	}
@@ -167,5 +202,49 @@ public class HomePageObject extends BaseObject {
 		homepageViewCartbtn.click();
 	}
 	
+	//homepage left side category
 	
+	public boolean categoryDisplay()
+	{
+		return categories.isDisplayed();
+	}
+	
+	
+	//home page Women+ click
+	public void womenCategory()
+	{
+		clickWomencategory.click();
+	}
+	
+	//women category--Dress
+	
+	public void clickDress()
+	{
+		dresscategory.click();
+	}
+	
+	//verify for "Women Dress -Products"
+	public boolean verifyWomenDressProduct()
+	{
+		wait.until(ExpectedConditions.visibilityOf(womendressproduct));
+		
+		return womendressproduct.isDisplayed();
+	}
+	
+	//products category page men link
+	public void clickMenCategory()
+	{
+		clickMenCategory.click();
+	}
+	
+	public void clickJeansProducts()
+	{
+		clickJeans.click();
+	}
+	
+	public boolean displayMenReqProd()
+	{
+		wait.until(ExpectedConditions.visibilityOf(jeans_display));
+		return jeans_display.isDisplayed();
+	}
 }
