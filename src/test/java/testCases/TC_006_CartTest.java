@@ -65,7 +65,7 @@ public class TC_006_CartTest extends TestBase{
 		
 		ProductPage pp= new ProductPage(driver);
 		
-		pp.javaScriptScroll();
+		pp.javaScriptScroll("window.scrollBy(0,500)");
 		
 		pp.hoverOverFirstProduct();
 		

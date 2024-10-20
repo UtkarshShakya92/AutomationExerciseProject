@@ -58,6 +58,8 @@ public class ProductPage extends BaseObject{
 	@FindBy(xpath="//div[@class='features_items']//div[@class='productinfo text-center']//p")
 	List<WebElement> search_elements;
 	
+	////div[@class='features_items']//div[@class='col-sm-4']//div[@class='productinfo text-center']//p
+	
 	@FindBy(xpath="//div[@class='features_items']//h2[text()='Searched Products']")
 	WebElement searchedProduct;
 	
@@ -271,9 +273,9 @@ public class ProductPage extends BaseObject{
 	}
 	
 	
-	public void javaScriptScroll()
+	public void javaScriptScroll(String scrollto)
 	{
-		js.executeScript("window.scrollBy(0,500)");
+		js.executeScript(scrollto);
 	}
 	
 	public void hover_over_Second_Product()

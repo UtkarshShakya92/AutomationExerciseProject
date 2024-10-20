@@ -18,7 +18,7 @@ public class TC_0012_CartBrandProducts extends TestBase{
 		
 		ProductPage pp = new ProductPage(driver);
 		
-		pp.javaScriptScroll();
+		pp.javaScriptScroll("window.scrollBy(0,500)");
 		
         Assert.assertFalse(pp.brand_List());
 		
