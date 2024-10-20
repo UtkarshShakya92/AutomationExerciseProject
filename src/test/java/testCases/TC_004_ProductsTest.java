@@ -30,7 +30,7 @@ public class TC_004_ProductsTest extends TestBase{
 		
 		System.out.println("======All Product page is  Displayed =======");
 		
-		Assert.assertFalse(pp.product_List());
+		Assert.assertFalse(pp.brand_List());
 		
 		System.out.println("======Product List is Displayed =======");
 		

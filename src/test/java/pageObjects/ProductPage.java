@@ -24,9 +24,9 @@ public class ProductPage extends BaseObject{
 	@FindBy(xpath="//h2[text()='All Products']")
 	WebElement all_product_txt;
 	
-	@FindBy(xpath="//div[@class='brands-name']//ul//li")
+	@FindBy(xpath="//div[@class='brands-name']//ul//li//a")
 	
-	List<WebElement>  productList;
+	List<WebElement>  brandList;
 	
 	@FindBy(xpath="//div[@class='choose']//ul//li//a[@href='/product_details/1']")
 	WebElement first_view_product_btn;
@@ -100,7 +100,13 @@ public class ProductPage extends BaseObject{
 	@FindBy(css =".cart")
 	WebElement forthproductPage_AddCart_btn;
 	
+	//verify madame page is displayed
 	
+	@FindBy(xpath="//h2[text()='Brand - Madame Products']")
+	WebElement madametitle;   
+	
+	@FindBy(xpath="//h2[text()='Brand - Biba Products']")
+	WebElement bibatitle;
 	
 	//==============================================
 	
@@ -111,9 +117,54 @@ public class ProductPage extends BaseObject{
 		return all_product_txt.isDisplayed();
 	}
 	
-	public boolean product_List()
+	public boolean brand_List()
 	{
-		return productList.isEmpty();
+		return brandList.isEmpty();
+	}
+	
+	public void  madame_brandproductselect()
+	{
+		for(int i=0;i<brandList.size();i++)
+		{
+			System.out.println(brandList.get(i).getText());
+			if(brandList.get(i).getText().contains("MADAME"))
+			{
+				brandList.get(i).click();
+				break;
+			}
+			
+		}
+	}
+	
+	//verify madame title
+	public boolean madametitleverify()
+	{
+		mywait.until(ExpectedConditions.visibilityOf(madametitle));
+		
+		return madametitle.isDisplayed();//bibatitle
+	}
+	
+	public void  biba_brandproductselect()
+	{
+		for(int i=0;i<brandList.size();i++)
+		{
+			System.out.println(brandList.get(i).getText());
+			if(brandList.get(i).getText().contains("BIBA"))
+			{
+				brandList.get(i).click();
+				break;
+			}
+			
+		}
+	}
+	
+	public boolean bibatitleverify()
+	{
+		
+		driver.navigate().refresh();
+		mywait.until(ExpectedConditions.visibilityOf(bibatitle));
+		
+		return bibatitle.isDisplayed();
 	}
 	
 	public void first_product_view_btn()
