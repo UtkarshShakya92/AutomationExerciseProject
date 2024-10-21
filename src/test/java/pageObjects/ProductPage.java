@@ -119,6 +119,35 @@ public class ProductPage extends BaseObject{
 	@FindBy(xpath="//h2[text()='Brand - Biba Products']")
 	WebElement bibatitle;
 	
+	//view product bt of 7th product inn product page
+	
+	@FindBy(xpath="//a[@href='/product_details/7']")
+	WebElement seventhProductViewbtn;
+	
+	//verify write review text is present
+	
+	@FindBy(xpath="//a[text()='Write Your Review']")
+	WebElement writeReview;
+	
+	//review name fld
+	
+	@FindBy(id="name")
+	WebElement insertReviewerName;
+	
+	//reviewer email
+	
+	@FindBy(id="email")
+	WebElement insertReviewerEmail;
+	
+	@FindBy(id="review")
+	WebElement enterReviewtxt; 
+	
+	@FindBy(id="button-review")
+	WebElement reviewSubmitbtn;
+	
+	@FindBy(xpath="//div[@class='alert-success alert']//span")
+	WebElement review_success_alert;
+	
 	//==============================================
 	
 	Actions act =new Actions(driver);
@@ -344,4 +373,44 @@ public class ProductPage extends BaseObject{
 		forthproductPage_AddCart_btn.click();
 	}
 	
+	//aal product page 7th product view btn
+	
+	public void madameTopseventhProduct()
+	{
+		seventhProductViewbtn.click();
+	}
+	
+	
+	public boolean writeReviewheading()
+	{
+		return writeReview.isDisplayed();
+	}
+	
+	//Review name fld
+	
+	public void reviewerName(String name)
+	{
+		insertReviewerName.sendKeys(name);
+	}
+	
+	public void reviewerEmail(String reviewEmai)
+	{
+		insertReviewerEmail.sendKeys(reviewEmai);
+	}
+	
+	public void enterReviewtxtfld(String reviewtxt)
+	{
+		enterReviewtxt.sendKeys(reviewtxt);
+		
+	}
+	
+	public void reviewSubmitbtn()
+	{
+		reviewSubmitbtn.click();
+	}
+	
+	public String reviewSuccess_AlertMsg()
+	{
+		return review_success_alert.getText();
+	}
 }
