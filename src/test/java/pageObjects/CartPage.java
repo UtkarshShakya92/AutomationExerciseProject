@@ -72,6 +72,16 @@ public class CartPage extends BaseObject{
 	@FindBy(xpath="//span//p/b[text()='Cart is empty!']")
 	WebElement emptyCart;
 	
+	//CartProducts verify by name 
+	
+	@FindBy(xpath="//table//tbody//td[2]//h4//a")
+	List<WebElement> searchRelatedProcutsinCart;
+	
+	//click login btn
+	
+	@FindBy(xpath="//a[@href='/login']")
+	WebElement loginBtn; 
+	
 	//===============================================
 	
 	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
@@ -163,5 +173,26 @@ public class CartPage extends BaseObject{
 	{
 		wait.until(ExpectedConditions.visibilityOf(emptyCart));
 		return emptyCart.isDisplayed();
+	}
+	
+	public boolean productsInCart(String expectedproducts)
+	{
+		for(int i=0;i<searchRelatedProcutsinCart.size();i++)
+		{
+			if(!searchRelatedProcutsinCart.get(i).getText().toLowerCase().contains(expectedproducts))
+			{
+				return false;
+			}
+			
+			
+		}
+		return true;
+				
+	}
+	
+	//clicking signup/Login button
+	public void clickLogin_signUp_Btn()
+	{
+		loginBtn.click();
 	}
 }

@@ -59,6 +59,10 @@ public class ProductPage extends BaseObject{
 	List<WebElement> search_elements;
 	
 	////div[@class='features_items']//div[@class='col-sm-4']//div[@class='productinfo text-center']//p
+	//Searched products add to cart
+	
+	@FindBy(xpath="//div[@class='features_items']//div[@class='col-sm-4']//div[@class='productinfo text-center']//a")
+	List<WebElement> search_element_addToCartbtn;
 	
 	@FindBy(xpath="//div[@class='features_items']//h2[text()='Searched Products']")
 	WebElement searchedProduct;
@@ -87,6 +91,11 @@ public class ProductPage extends BaseObject{
 	
 	@FindBy(xpath="//div[@class='modal-body']//p//a[@href='/view_cart']")
 	WebElement viewCartbtn;
+	
+	//Click Cart Button
+	
+	@FindBy(xpath="//a[@href='/view_cart']")
+	WebElement cartBtn;
 	
 	//4th product perticular page 
 	
@@ -244,6 +253,17 @@ public class ProductPage extends BaseObject{
 		
 	}
 	
+	//Verify all the products related to search are visible and add them to cart respectively
+	
+	public void clickAddtoCartSearchedProductList()
+	{
+		for(int i=0; i<search_element_addToCartbtn.size();i++)
+		{
+			search_element_addToCartbtn.get(i).click();
+			continue_btn.click();
+		}
+	}
+	
 	
 	
 	
@@ -294,6 +314,11 @@ public class ProductPage extends BaseObject{
 	public void click_view_Cart_btn()
 	{
 		viewCartbtn.click();
+	}
+	
+	public void click_Cart_Btn()
+	{
+		cartBtn.click();
 	}
 	
 	// to verify fourth Product page is visible or not
