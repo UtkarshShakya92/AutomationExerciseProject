@@ -2,6 +2,7 @@ package pageObjects;
 
 import java.time.Duration;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -98,6 +99,10 @@ public class HomePageObject extends BaseObject {
 	//verifying  the men category 
 	@FindBy(xpath="(//div[@class='features_items']//h2)[1]")
 	WebElement jeans_display;
+	
+	//location recommended items right scroller arrow 
+	@FindBy(xpath="//div[@class='recommended_items']//h2[contains(.,'recommended')]")
+	WebElement recommendItemsTxt;
 	
 	//action 
 	
@@ -246,5 +251,16 @@ public class HomePageObject extends BaseObject {
 	{
 		wait.until(ExpectedConditions.visibilityOf(jeans_display));
 		return jeans_display.getText();
+	}
+	
+	public void homePageScrollToLast()
+	{
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].scrollIntoView();",recommendItemsTxt);
+	}
+	
+	public String recommendedtxt()
+	{
+		return recommendItemsTxt.getText();
 	}
 }
