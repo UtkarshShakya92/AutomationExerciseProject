@@ -1,6 +1,7 @@
 package pageObjects;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -175,6 +176,8 @@ public class CartPage extends BaseObject{
 		return emptyCart.isDisplayed();
 	}
 	
+	
+	//verifying products in cart while searching the products
 	public boolean productsInCart(String expectedproducts)
 	{
 		for(int i=0;i<searchRelatedProcutsinCart.size();i++)
@@ -194,5 +197,19 @@ public class CartPage extends BaseObject{
 	public void clickLogin_signUp_Btn()
 	{
 		loginBtn.click();
+	}
+	
+	//Products in cart to verify with their name
+	
+	public List<String> getCartProducts()
+	{
+		List<String> cartProducts = new ArrayList<String>();
+		
+		for(int i=0;i<searchRelatedProcutsinCart.size();i++)
+		{
+			cartProducts.add(searchRelatedProcutsinCart.get(i).getText());
+		}
+		
+		return cartProducts;
 	}
 }
