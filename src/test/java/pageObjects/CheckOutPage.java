@@ -35,6 +35,16 @@ public class CheckOutPage extends BaseObject{
 	WebElement payment_btn;
 	
 	
+	@FindBy(xpath="//ul//li//a[@href='/delete_account']")
+	WebElement delete_acc_btn;
+	
+	//Account deleted text
+	@FindBy(xpath="//h2/b[text()='Account Deleted!']")
+	WebElement acc_dtd_text;
+	//deletepage continue btn 
+	@FindBy(xpath="//a[@data-qa='continue-button']")
+	WebElement acc_continue_btn;
+	
 	//==========================================================
 	
 	public void sizeofaddress()
@@ -95,5 +105,23 @@ public class CheckOutPage extends BaseObject{
 	{
 		payment_btn.click();
 	}
+	
+	//delete account btn
+		public void delete_Account_btn()
+		{
+			delete_acc_btn.click();
+		}
+		
+		//delete page delete text
+		public String delete_account_msg()
+		{
+			return acc_dtd_text.getText();
+		}
+		
+		//delete page continue btn
+		public void del_page_conti_btn()
+		{
+			acc_continue_btn.click();
+		}
 	
 }

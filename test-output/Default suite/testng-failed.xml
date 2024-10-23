@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.TC_0015_AddToCart_Recommended_Items">
+      <class name="testCases.TC_016_VerifyAddressDetailsInCheckOutPage">
         <methods>
+          <include name="verifyAddressinCheckout"/>
           <include name="setUp"/>
-          <include name="AddTocartRecommendedItems"/>
         </methods>
-      </class> <!-- testCases.TC_0015_AddToCart_Recommended_Items -->
+      </class> <!-- testCases.TC_016_VerifyAddressDetailsInCheckOutPage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
