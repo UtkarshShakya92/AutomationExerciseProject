@@ -118,7 +118,7 @@ public class TC_007_PlaceOrderWithRegister extends TestBase{
 		
 		rp.continue_btn_click();
 		
-		String loginAs = rp.login_user_name();
+		String loginAs = hp.login_user_name();
 		
 		Assert.assertEquals(loginAs, "test33");
 		

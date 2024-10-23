@@ -10,7 +10,7 @@ import pageObjects.CartPage;
 import pageObjects.HomePageObject;
 import testBase.TestBase;
 
-public class TC_0015_AddToCart_Recommended_Items extends TestBase{
+public class TC_015_AddToCart_Recommended_Items extends TestBase{
 
 	@Test
 	public void AddTocartRecommendedItems()

@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import pageObjects.HomePageObject;
 import testBase.TestBase;
 
-public class TC_0011_ViewCategoryProducts extends TestBase{
+public class TC_011_ViewCategoryProducts extends TestBase{
 	
 	@Test
 	public void viewProducsCategory()

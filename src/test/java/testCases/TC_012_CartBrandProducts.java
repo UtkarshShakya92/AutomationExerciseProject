@@ -7,7 +7,7 @@ import pageObjects.HomePageObject;
 import pageObjects.ProductPage;
 import testBase.TestBase;
 
-public class TC_0012_CartBrandProducts extends TestBase{
+public class TC_012_CartBrandProducts extends TestBase{
 	
 	@Test
 	public void verifyCartBrnadProducts()

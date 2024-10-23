@@ -9,7 +9,7 @@ import pageObjects.LoginPage;
 import pageObjects.ProductPage;
 import testBase.TestBase;
 
-public class TC_0013_SearchProductandVerifyCartAfterLogin extends TestBase {
+public class TC_013_SearchProductandVerifyCartAfterLogin extends TestBase {
 
 	@Test
 	public void searchAndVerifyCartAfterLogin() {

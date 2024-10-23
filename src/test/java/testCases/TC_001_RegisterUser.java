@@ -96,7 +96,7 @@ public class TC_001_RegisterUser extends TestBase{
 		
 		//Checking UserName is displayed or not 
 		
-		String userLoginName = rp.login_user_name();
+		String userLoginName = hp.login_user_name();
 		
 		if(userLoginName.contains("Test22"))
 		{
@@ -112,9 +112,9 @@ public class TC_001_RegisterUser extends TestBase{
 		
 		//delete account btn click
 		
-		rp.delete_Account_btn();
+		hp.delete_Account_btn();
 		
-		String acc_delete_msg = rp.delete_account_msg();
+		String acc_delete_msg = hp.delete_account_msg();
 		
 		if(acc_delete_msg.equalsIgnoreCase("ACCOUNT DELETED!"))
 		{
@@ -127,7 +127,7 @@ public class TC_001_RegisterUser extends TestBase{
 			System.out.println("Account deleted is not displayed");
 		}
 		
-		rp.del_page_conti_btn();
+		hp.del_page_conti_btn();
 	}
 
 }

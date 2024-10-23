@@ -10,7 +10,7 @@ import pageObjects.CartPage;
 import pageObjects.HomePageObject;
 import testBase.TestBase;
 
-public class TC_0010_RemoveProductsFromCart extends TestBase {
+public class TC_010_RemoveProductsFromCart extends TestBase {
 
 	@Test
 	public void removeProductsFromcart() {

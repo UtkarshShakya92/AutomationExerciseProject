@@ -7,7 +7,7 @@ import pageObjects.HomePageObject;
 import pageObjects.ProductPage;
 import testBase.TestBase;
 
-public class TC_0014_WriteReviewOnAnyProduct extends TestBase {
+public class TC_014_WriteReviewOnAnyProduct extends TestBase {
 	
 	@Test
 	public void WriteReviewOnProduct()

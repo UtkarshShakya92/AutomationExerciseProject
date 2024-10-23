@@ -91,18 +91,7 @@ public class RegistrationPage extends BaseObject{
 	@FindBy(xpath ="//a[text()='Continue']")
 	WebElement btn_continue;
 	
-	@FindBy(xpath="//ul//li//a//following-sibling::b")
-	WebElement login_user_name;
 	
-	@FindBy(xpath="//ul//li//a[@href='/delete_account']")
-	WebElement delete_acc_btn;
-	
-	
-	@FindBy(xpath="//h2/b[text()='Account Deleted!']")
-	WebElement acc_dtd_text;
-	
-	@FindBy(xpath="//a[@data-qa='continue-button']")
-	WebElement acc_continue_btn;
 	
 	
 	//Actions===================================================================
@@ -244,23 +233,5 @@ public class RegistrationPage extends BaseObject{
 		btn_continue.click();
 	}
 	
-	public String login_user_name()
-	{
-		return login_user_name.getText();
-	}
 	
-	public void delete_Account_btn()
-	{
-		delete_acc_btn.click();
-	}
-	
-	public String delete_account_msg()
-	{
-		return acc_dtd_text.getText();
-	}
-	
-	public void del_page_conti_btn()
-	{
-		acc_continue_btn.click();
-	}
 }
