@@ -45,6 +45,8 @@ public class PaymentPage extends BaseObject{
 	@FindBy(xpath="//a[@data-qa='continue-button']")
 	WebElement clickContinuebtn;
 	
+	@FindBy(xpath="//a[@href='/download_invoice/900']")
+	WebElement downloadInvoicebtn;
 	//====================================================
 	
 	public void enternameOnCard(String cardname)
@@ -96,6 +98,11 @@ public class PaymentPage extends BaseObject{
 	public void clickContinuebtn()
 	{
 		clickContinuebtn.click();
+	}
+	
+	public void clickDownloadInvoiceBtn()
+	{
+		downloadInvoicebtn.click();
 	}
 	
 }
