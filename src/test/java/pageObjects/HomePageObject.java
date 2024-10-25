@@ -126,6 +126,15 @@ public class HomePageObject extends BaseObject {
 	@FindBy(xpath="//a[@data-qa='continue-button']")
 	WebElement acc_continue_btn;
 	
+	//HomePage ScrollUp to Top button
+	
+	@FindBy(xpath="//a[@id='scrollUp']")
+    WebElement scrollToTopBtn;	
+	
+	//
+	
+	@FindBy(xpath="(//div[@id='slider-carousel']//div[@class='carousel-inner']//h2)[1]")
+	WebElement fullfledgedtext;
 
 	// action
 
@@ -300,5 +309,16 @@ public class HomePageObject extends BaseObject {
 	public void del_page_conti_btn()
 	{
 		acc_continue_btn.click();
+	}
+	
+	public void scrollTotopBtn()
+	{
+		scrollToTopBtn.click();
+	}
+	
+	public String verifyFullfledgedTex()
+	{
+		wait.until(ExpectedConditions.visibilityOf(fullfledgedtext));
+		return fullfledgedtext.getText();
 	}
 }
