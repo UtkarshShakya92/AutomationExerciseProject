@@ -135,6 +135,15 @@ public class HomePageObject extends BaseObject {
 	
 	@FindBy(xpath="(//div[@id='slider-carousel']//div[@class='carousel-inner']//h2)[1]")
 	WebElement fullfledgedtext;
+	
+	//Test cases btn
+	
+	@FindBy(xpath="//div[@class='col-sm-8']//a[@href='/test_cases']")
+	WebElement testCasebtn; 
+	
+	//testCases page verify
+	@FindBy(xpath="//section[@id='form']//h2//b[text()='Test Cases']")
+	WebElement testcasestxt;
 
 	// action
 
@@ -320,5 +329,15 @@ public class HomePageObject extends BaseObject {
 	{
 		wait.until(ExpectedConditions.visibilityOf(fullfledgedtext));
 		return fullfledgedtext.getText();
+	}
+	
+	public void clickTestCasebtn()
+	{
+		testCasebtn.click();
+	}
+	
+	public boolean  verifyTestCasestxtintestcasesPage()
+	{
+		return testcasestxt.isDisplayed();
 	}
 }

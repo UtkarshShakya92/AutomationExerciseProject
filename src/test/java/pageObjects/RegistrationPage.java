@@ -91,7 +91,10 @@ public class RegistrationPage extends BaseObject{
 	@FindBy(xpath ="//a[text()='Continue']")
 	WebElement btn_continue;
 	
+	///regiter with already register email id 
 	
+	@FindBy(xpath="//form[@action='/signup']//p[text()='Email Address already exist!']")
+	WebElement emailAlreadyExist;
 	
 	
 	//Actions===================================================================
@@ -233,5 +236,9 @@ public class RegistrationPage extends BaseObject{
 		btn_continue.click();
 	}
 	
+	public boolean emailAlreadyExistText()
+	{
+		return emailAlreadyExist.isDisplayed();
+	}
 	
 }

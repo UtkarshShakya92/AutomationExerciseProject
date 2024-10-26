@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-26T13:22:53 IST" name="Default suite" finished-at="2024-10-26T13:23:36 IST" duration-ms="43700">
+  <suite started-at="2024-10-26T16:26:11 IST" name="Default suite" finished-at="2024-10-26T16:26:21 IST" duration-ms="10036">
     <groups>
     </groups>
-    <test started-at="2024-10-26T13:22:53 IST" name="Default test" finished-at="2024-10-26T13:23:36 IST" duration-ms="43700">
-      <class name="testCases.TC_017_DownloadIvoiceAfterPurchaseOrder">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.TC_017_DownloadIvoiceAfterPurchaseOrder@293bb8a5]" started-at="2024-10-26T13:22:53 IST" name="setUp" finished-at="2024-10-26T13:23:01 IST" duration-ms="8023" status="PASS">
+    <test started-at="2024-10-26T16:26:11 IST" name="Default test" finished-at="2024-10-26T16:26:21 IST" duration-ms="10036">
+      <class name="testCases.TC_007_VerifyTestCasesPage">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.TC_007_VerifyTestCasesPage@293bb8a5]" started-at="2024-10-26T16:26:11 IST" name="setUp" finished-at="2024-10-26T16:26:20 IST" duration-ms="8157" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="downloadInvoiceAfterPurchaseOrder()[pri:0, instance:testCases.TC_017_DownloadIvoiceAfterPurchaseOrder@293bb8a5]" started-at="2024-10-26T13:23:01 IST" name="downloadInvoiceAfterPurchaseOrder" finished-at="2024-10-26T13:23:36 IST" duration-ms="35606" status="PASS">
+        <test-method signature="verifyTestCasesPage()[pri:0, instance:testCases.TC_007_VerifyTestCasesPage@293bb8a5]" started-at="2024-10-26T16:26:20 IST" name="verifyTestCasesPage" finished-at="2024-10-26T16:26:21 IST" duration-ms="1804" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- downloadInvoiceAfterPurchaseOrder -->
-      </class> <!-- testCases.TC_017_DownloadIvoiceAfterPurchaseOrder -->
+        </test-method> <!-- verifyTestCasesPage -->
+      </class> <!-- testCases.TC_007_VerifyTestCasesPage -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
