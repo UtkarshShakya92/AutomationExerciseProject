@@ -16,7 +16,7 @@ import testBase.TestBase;
 public class TC_017_DownloadIvoiceAfterPurchaseOrder extends TestBase{
 	
 	@Test
-	public void downloadInvoiceAfterPurchaseOrder()
+	public void downloadInvoiceAfterPurchaseOrder() throws InterruptedException
 	{
 		HomePageObject hp = new HomePageObject(driver);
 
@@ -169,6 +169,10 @@ public class TC_017_DownloadIvoiceAfterPurchaseOrder extends TestBase{
 		System.out.println("The msg yur order is confirmed is displayed");
 		
 		payp.clickDownloadInvoiceBtn();
+		
+		Assert.assertTrue(payp.isFileDownloaded("C:\\Users\\utk\\Downloads\\", "invoice.txt"));
+		
+		System.out.println("the file is downloaded and verified");
 	}
 
 }

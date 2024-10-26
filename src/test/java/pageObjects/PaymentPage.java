@@ -1,5 +1,6 @@
 package pageObjects;
 
+import java.io.File;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
@@ -104,5 +105,21 @@ public class PaymentPage extends BaseObject{
 	{
 		downloadInvoicebtn.click();
 	}
+	
+	public boolean isFileDownloaded(String downloadPath, String fileName) throws InterruptedException {
+		
+		Thread.sleep(5000);
+		   File dir = new File(downloadPath);
+		   File[] dir_contents = dir.listFiles();
+
+		   if (dir_contents != null) {
+		       for (File dir_content : dir_contents) {
+		            if (dir_content.getName().equals(fileName))
+		                return true;
+		       }
+		   }
+
+		   return false;
+		}
 	
 }
